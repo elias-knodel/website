@@ -1,2 +1,15 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<svelte:head>
+	<title>Homepage</title>
+	<meta
+		name="description"
+		content="Hi 👋🏼. My name is Elias and i am a fullstack web dev. 
+    But i am also interested in other thinks like devops, infrastructure etc."
+	/>
+</svelte:head>
+
+<main class="flex flex-col items-center">
+	<h1 class="">Elias Knodel</h1>
+	<!-- <hr class="my-8 rounded h-px bg-crust border-2 dark:bg-crust"> -->
+	<p class="font-semibold my-8 text-subtext-1">&lt; / &gt;</p>
+	<h2 class="font-thin font-mono text-subtext-1">Web Developer</h2>
+</main>
