@@ -13,7 +13,7 @@ const config = {
 		adapter: adapter(),
 
 		paths: {
-			base: dev ? '' : '/website'
+			base: dev ? '' : ''
 		}
 	}
 };
