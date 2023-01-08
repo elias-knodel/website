@@ -6,11 +6,11 @@
 		<meta name="viewport" content="width=device-width" />
 		%sveltekit.head%
 	</head>
-	<body class="theme-light">
-		<!-- <script>
-			const theme = localStorage.getItem('theme') || '';
-			document.body.className = theme;
-		</script> -->
+	<body class="">
+		<script lang="ts">
+            const theme = localStorage.getItem('theme') || '';
+            document.body.className = theme;
+        </script>
 		<div class="bg-base min-h-screen text">%sveltekit.body%</div>
 	</body>
 </html>

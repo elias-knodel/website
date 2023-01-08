@@ -1,5 +1,6 @@
 <script>
 	import { base } from '$app/paths';
+	import ThemeSwitcher from './ThemeSwitcher.svelte';
 </script>
 
 <nav class="flex justify-between h-20 items-center px-8">
@@ -19,6 +20,7 @@
 				GitHub
 			</a>
 			<a class="hidden sm:block" href="{base}#_">Portfolio<sup>(soon)</sup></a>
+			<ThemeSwitcher />
 		</nav>
 	</div>
 </nav>
