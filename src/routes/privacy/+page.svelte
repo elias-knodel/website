@@ -2,7 +2,7 @@
 	<title>Privacy | Elias Knodel</title>
 </svelte:head>
 
-<main class="prose lg:prose-lg py-8 mx-8 sm:m-auto">
+<main class="prose mx-8 py-8 sm:m-auto lg:prose-lg">
 	<h1>Datenschutz&shy;erkl&auml;rung</h1>
 	<h2>1. Datenschutz auf einen Blick</h2>
 	<h3>Allgemeine Hinweise</h3>

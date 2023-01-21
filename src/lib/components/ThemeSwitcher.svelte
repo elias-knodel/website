@@ -8,7 +8,7 @@
 </script>
 
 <select
-	class="bg-blue font-semibold rounded-lg text-sm px-4 py-2.5 text-crust max-h-10"
+	class="max-h-10 rounded-lg bg-blue px-4 py-2.5 text-sm font-semibold text-crust"
 	bind:value={selected}
 	on:change={() => switchTheme()}
 >

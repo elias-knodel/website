@@ -2,7 +2,7 @@
 	<title>Imprint | Elias Knodel</title>
 </svelte:head>
 
-<main class="prose lg:prose-lg py-8 mx-8 sm:m-auto">
+<main class="prose mx-8 py-8 sm:m-auto lg:prose-lg">
 	<h1>Impressum</h1>
 
 	<h2>Angaben gem&auml;&szlig; &sect; 5 TMG</h2>

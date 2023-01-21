@@ -3,7 +3,7 @@
 </script>
 
 <footer
-	class="flex py-2 sm:py-0 sm:justify-between px-8 items-center h-16 sm:h-12 font-semibold flex-col sm:flex-row text-subtext-1"
+	class="flex h-16 flex-col items-center py-2 px-8 font-semibold text-subtext-1 sm:h-12 sm:flex-row sm:justify-between sm:py-0"
 >
 	<!-- Left -->
 	<div>

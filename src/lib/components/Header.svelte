@@ -3,10 +3,10 @@
 	import ThemeSwitcher from './ThemeSwitcher.svelte';
 </script>
 
-<nav class="flex justify-between h-20 items-center px-8">
+<nav class="flex h-20 items-center justify-between px-8">
 	<div class="flex space-x-6">
 		<a href=" {base}/">
-			<h1 class="font-bold text-3xl text-lavender">Welcome!</h1>
+			<h1 class="text-3xl font-bold text-lavender">Welcome!</h1>
 		</a>
 	</div>
 	<div class="flex items-center space-x-6">
