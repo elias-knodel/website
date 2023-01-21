@@ -2,12 +2,12 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
+		<link rel="icon" href="%sveltekit.assets%/favicon.ico" />
 		<meta name="viewport" content="width=device-width" />
 		%sveltekit.head%
 	</head>
 	<body class="">
-		<script lang="ts">
+		<script>
             const theme = localStorage.getItem('theme') || '';
             document.body.className = theme;
         </script>

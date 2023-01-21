@@ -1,5 +1,5 @@
 <svelte:head>
-	<title>Privacy</title>
+	<title>Privacy | Elias Knodel</title>
 </svelte:head>
 
 <main class="prose lg:prose-lg py-8 mx-8 sm:m-auto">
@@ -80,10 +80,9 @@
 	</p>
 	<p>Wir setzen folgende(n) Hoster ein:</p>
 	<p>
-		GitHub, Inc.<br />
-		c/o Corporation Service Company<br />
-		2710 Gateway Oaks Drive, Suite 150N<br />
-		Sacramento, CA 95833-3505
+		Cloudflare Inc., <br />
+		101 Townsend St., San Francisco, <br />
+		CA 94107, USA
 	</p>
 	<h3>Cloudflare</h3>
 	<p>

@@ -1,5 +1,5 @@
 <svelte:head>
-	<title>Imprint</title>
+	<title>Imprint | Elias Knodel</title>
 </svelte:head>
 
 <main class="prose lg:prose-lg py-8 mx-8 sm:m-auto">
