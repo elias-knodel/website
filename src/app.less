@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import 'styles/themes.less';
+@import 'styles/prose-override.less';
+
+/* =================================================
+    Extended Tailwind base styles
+   ================================================= */
+@layer base {
+	/* h1 {
+        @apply text !important;
+    }
+
+    h2, h3, h4, h5, h6 {
+        @apply text-subtext-1 !important;
+    }
+    p {
+        @apply text-subtext-0 !important;
+    } */
+
+	a {
+		@apply hover:text-rosewater;
+		@apply focus:text-rosewater;
+	}
+
+	h1 {
+		@apply text-5xl;
+		@apply sm:text-7xl;
+	}
+	h2 {
+		@apply text-4xl;
+		@apply sm:text-6xl;
+	}
+	h3 {
+		@apply text-3xl;
+		@apply sm:text-5xl;
+	}
+	h4 {
+		@apply text-2xl;
+		@apply sm:text-4xl;
+	}
+	h5 {
+		@apply text-xl;
+		@apply sm:text-3xl;
+	}
+}
