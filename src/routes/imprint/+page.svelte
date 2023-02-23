@@ -15,7 +15,7 @@
 	<h2>Kontakt</h2>
 	<p>
 		Telefon: +49 176 81186296<br />
-		E-Mail: elias.knodel@gmail.com
+		E-Mail: contact@elias-knodel.de
 	</p>
 
 	<h2>Redaktionell verantwortlich</h2>
@@ -25,6 +25,6 @@
 		76707 Hambr&uuml;cken<br />
 		<br />
 		Telefon: +49 176 81186296<br />
-		E-Mail: elias.knodel@gmail.com
+		E-Mail: contact@elias-knodel.de
 	</p>
 </main>

@@ -146,7 +146,7 @@
 
 	<p>
 		Telefon: +49 176 81186296<br />
-		E-Mail: elias.knodel@gmail.com
+		E-Mail: contact@elias-knodel.de
 	</p>
 	<p>
 		Verantwortliche Stelle ist die nat&uuml;rliche oder juristische Person, die allein oder

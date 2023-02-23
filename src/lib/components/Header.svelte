@@ -20,6 +20,7 @@
 				GitHub
 			</a>
 			<a class="hidden sm:block" href="{base}#_">Portfolio<sup>(soon)</sup></a>
+			<a class="hidden sm:block" href="{base}#_">Hire me!<sup>(soon)</sup></a>
 			<ThemeSwitcher />
 		</nav>
 	</div>
