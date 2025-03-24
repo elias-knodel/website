@@ -1,17 +1,20 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@import "tailwindcss";
 
-body::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('/background.JPEG');
-    background-size: cover;
-    background-position: center;
-    filter: blur(16px) grayscale(100%);
-    z-index: -1;
+@theme {
+    --font-display: "Quicksand", "sans-serif";
+    --default-font-family: "Quicksand";
+    /* ... */
 }
+/*body::before {*/
+/*    content: '';*/
+/*    position: absolute;*/
+/*    top: 0;*/
+/*    left: 0;*/
+/*    width: 100%;*/
+/*    height: 100%;*/
+/*    background-image: url('/background.JPEG');*/
+/*    background-size: cover;*/
+/*    background-position: center;*/
+/*    filter: blur(16px) grayscale(100%);*/
+/*    z-index: -1;*/
+/*}*/

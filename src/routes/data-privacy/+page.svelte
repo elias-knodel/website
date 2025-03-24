@@ -1,4 +1,4 @@
-<main>
+<main class="text-gray-900 px-4 py-2 sm:px-10 sm:py-8 h-full w-full isolate rounded-xl bg-white/20 shadow-lg ring-1 ring-black/5">
     <h1 class="mt-10 scroll-m-20 pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0">
         Datenschutz&shy;erkl&auml;rung
     </h1>

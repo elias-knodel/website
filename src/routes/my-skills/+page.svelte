@@ -1,148 +1,58 @@
+<!--<script lang="ts">-->
+<!--    import { Star } from 'lucide-svelte';-->
+
+<!--    let StarFull = Star;-->
+<!--</script>-->
+
 <main>
-    <h1 class="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
-        Skills & Expertise
-    </h1>
-    <p class="leading-7 [&:not(:first-child)]:mt-6">
-        <strong>WordPress (WooCommerce, Elementor)</strong> - ★★★★★ (100%)<br />
-        <strong>PHP (Symfony, Doctrine)</strong> - ★★★★☆ (70%)<br />
-        <strong>JavaScript (Svelte, Bun, Node.js)</strong> - ★★★★☆ (70%)<br />
-        <strong>PostgreSQL (Datenbanken)</strong> - ★★★★☆ (65%)<br />
-        <strong>Linux (Server-Administration)</strong> - ★★★☆☆ (50%)<br />
-        <strong>DevOps (Docker, Kubernetes)</strong> - ★★☆☆☆ (35%)<br />
-        <strong>Python</strong> - ★★☆☆☆ (30%)<br />
-        <strong>Go</strong> - ★☆☆☆☆ (20%)<br />
-        <strong>Java</strong> - ★☆☆☆☆ (10%)<br />
-    </p>
-</main>
-
-
-<!--<div>-->
 <!--    <h1 class="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">-->
-<!--        The Joke Tax Chronicles-->
+<!--        Skills & Expertise-->
 <!--    </h1>-->
 <!--    <p class="leading-7 [&:not(:first-child)]:mt-6">-->
-<!--        Once upon a time, in a far-off land, there was a very lazy king who spent-->
-<!--        all day lounging on his throne. One day, his advisors came to him with a-->
-<!--        problem: the kingdom was running out of money.-->
+<!--        <strong class="text-blue-600">WordPress (WooCommerce, Elementor)</strong> - <span class="text-yellow-500">★★★★★</span> (100%)<br />-->
+<!--        <strong class="text-blue-600">PHP (Symfony, Doctrine)</strong> - <span class="text-yellow-500">★★★★☆</span> (70%)<br />-->
+<!--        <strong class="text-blue-600">JavaScript (Svelte, Bun, Node.js)</strong> - <span class="text-yellow-500">★★★★☆</span> (70%)<br />-->
+<!--        <strong class="text-blue-600">PostgreSQL (Datenbanken)</strong> - <span class="text-yellow-500">★★★★☆</span> (65%)<br />-->
+<!--        <strong class="text-blue-600">Linux (Server-Administration)</strong> - <span class="text-yellow-500">★★★☆☆</span> (50%)<br />-->
+<!--        <strong class="text-blue-600">DevOps (Docker, Kubernetes)</strong> - <span class="text-yellow-500">★★☆☆☆</span> (35%)<br />-->
+<!--        <strong class="text-blue-600">Python</strong> - <span class="text-yellow-500">★★☆☆☆</span> (30%)<br />-->
+<!--        <strong class="text-blue-600">Go</strong> - <span class="text-yellow-500">★☆☆☆☆</span> (20%)<br />-->
+<!--        <strong class="text-blue-600">Java</strong> - <span class="text-yellow-500">★☆☆☆☆</span> (10%)<br />-->
 <!--    </p>-->
-<!--    <h2-->
-<!--        class="mt-10 scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0"-->
-<!--    >-->
-<!--        The King's Plan-->
-<!--    </h2>-->
-<!--    <p class="leading-7 [&:not(:first-child)]:mt-6">-->
-<!--        The king thought long and hard, and finally came up with-->
-<!--        &lt;!&ndash; svelte-ignore a11y-invalid-attribute &ndash;&gt;-->
-<!--        <a href="#" class="text-primary font-medium underline underline-offset-4">-->
-<!--            a brilliant plan-->
-<!--        </a>-->
-<!--        : he would tax the jokes in the kingdom.-->
-<!--    </p>-->
-<!--    <blockquote class="mt-6 border-l-2 pl-6 italic">-->
-<!--        "After all," he said, "everyone enjoys a good joke, so it's only fair that-->
-<!--        they should pay for the privilege."-->
-<!--    </blockquote>-->
-<!--    <h3 class="mt-8 scroll-m-20 text-2xl font-semibold tracking-tight">-->
-<!--        The Joke Tax-->
-<!--    </h3>-->
-<!--    <p class="leading-7 [&:not(:first-child)]:mt-6">-->
-<!--        The king's subjects were not amused. They grumbled and complained, but the-->
-<!--        king was firm:-->
-<!--    </p>-->
-<!--    <ul class="my-6 ml-6 list-disc [&>li]:mt-2">-->
-<!--        <li>1st level of puns: 5 gold coins</li>-->
-<!--        <li>2nd level of jokes: 10 gold coins</li>-->
-<!--        <li>3rd level of one-liners : 20 gold coins</li>-->
-<!--    </ul>-->
-<!--    <p class="leading-7 [&:not(:first-child)]:mt-6">-->
-<!--        As a result, people stopped telling jokes, and the kingdom fell into a-->
-<!--        gloom. But there was one person who refused to let the king's foolishness-->
-<!--        get him down: a court jester named Jokester.-->
-<!--    </p>-->
-<!--    <h3 class="mt-8 scroll-m-20 text-2xl font-semibold tracking-tight">-->
-<!--        Jokester's Revolt-->
-<!--    </h3>-->
-<!--    <p class="leading-7 [&:not(:first-child)]:mt-6">-->
-<!--        Jokester began sneaking into the castle in the middle of the night and-->
-<!--        leaving jokes all over the place: under the king's pillow, in his soup, even-->
-<!--        in the royal toilet. The king was furious, but he couldn't seem to stop-->
-<!--        Jokester.-->
-<!--    </p>-->
-<!--    <p class="leading-7 [&:not(:first-child)]:mt-6">-->
-<!--        And then, one day, the people of the kingdom discovered that the jokes left-->
-<!--        by Jokester were so funny that they couldn't help but laugh. And once they-->
-<!--        started laughing, they couldn't stop.-->
-<!--    </p>-->
-<!--    <h3 class="mt-8 scroll-m-20 text-2xl font-semibold tracking-tight">-->
-<!--        The People's Rebellion-->
-<!--    </h3>-->
-<!--    <p class="leading-7 [&:not(:first-child)]:mt-6">-->
-<!--        The people of the kingdom, feeling uplifted by the laughter, started to tell-->
-<!--        jokes and puns again, and soon the entire kingdom was in on the joke.-->
-<!--    </p>-->
-<!--    <div class="my-6 w-full overflow-y-auto">-->
-<!--        <table class="w-full">-->
-<!--            <thead>-->
-<!--            <tr class="even:bg-muted m-0 border-t p-0">-->
-<!--                <th-->
-<!--                    class="border px-4 py-2 text-left font-bold [&[align=center]]:text-center [&[align=right]]:text-right"-->
-<!--                >-->
-<!--                    King's Treasury-->
-<!--                </th>-->
-<!--                <th-->
-<!--                    class="border px-4 py-2 text-left font-bold [&[align=center]]:text-center [&[align=right]]:text-right"-->
-<!--                >-->
-<!--                    People's happiness-->
-<!--                </th>-->
-<!--            </tr>-->
-<!--            </thead>-->
-<!--            <tbody>-->
-<!--            <tr class="even:bg-muted m-0 border-t p-0">-->
-<!--                <td-->
-<!--                    class="border px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right"-->
-<!--                >-->
-<!--                    Empty-->
-<!--                </td>-->
-<!--                <td-->
-<!--                    class="border px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right"-->
-<!--                >-->
-<!--                    Overflowing-->
-<!--                </td>-->
-<!--            </tr>-->
-<!--            <tr class="even:bg-muted m-0 border-t p-0">-->
-<!--                <td-->
-<!--                    class="border px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right"-->
-<!--                >-->
-<!--                    Modest-->
-<!--                </td>-->
-<!--                <td-->
-<!--                    class="border px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right"-->
-<!--                >-->
-<!--                    Satisfied-->
-<!--                </td>-->
-<!--            </tr>-->
-<!--            <tr class="even:bg-muted m-0 border-t p-0">-->
-<!--                <td-->
-<!--                    class="border px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right"-->
-<!--                >-->
-<!--                    Full-->
-<!--                </td>-->
-<!--                <td-->
-<!--                    class="border px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right"-->
-<!--                >-->
-<!--                    Ecstatic-->
-<!--                </td>-->
-<!--            </tr>-->
-<!--            </tbody>-->
-<!--        </table>-->
-<!--    </div>-->
-<!--    <p class="leading-7 [&:not(:first-child)]:mt-6">-->
-<!--        The king, seeing how much happier his subjects were, realized the error of-->
-<!--        his ways and repealed the joke tax. Jokester was declared a hero, and the-->
-<!--        kingdom lived happily ever after.-->
-<!--    </p>-->
-<!--    <p class="leading-7 [&:not(:first-child)]:mt-6">-->
-<!--        The moral of the story is: never underestimate the power of a good laugh and-->
-<!--        always be careful of bad ideas.-->
-<!--    </p>-->
-<!--</div>-->
+</main>
+
+<script lang="ts">
+    import { flip } from 'svelte/animate';
+
+    let skills = [
+        { name: "WordPress (WooCommerce, Elementor)", rating: 5, percentage: 100 },
+        { name: "PHP (Symfony, Doctrine)", rating: 4, percentage: 70 },
+        { name: "JavaScript (Svelte, Bun, Node.js)", rating: 4, percentage: 70 },
+        { name: "PostgreSQL (Datenbanken)", rating: 4, percentage: 65 },
+        { name: "Linux (Server-Administration)", rating: 3, percentage: 50 },
+        { name: "DevOps (Docker, Kubernetes)", rating: 2, percentage: 35 },
+        { name: "Python", rating: 2, percentage: 30 },
+        { name: "Go", rating: 1, percentage: 20 },
+        { name: "Java", rating: 1, percentage: 10 }
+    ];
+
+    export let skill;
+    let flipped = false;
+
+    function toggleFlip() {
+        flipped = !flipped;
+    }
+</script>
+
+{#each skills as skill, index (skill.name)}
+    <div class="card" on:click={toggleFlip} animate:flip>
+        <div class="card-inner">
+            <div class="card-front">
+                <strong class="text-blue-600">{skill.name}</strong>
+            </div>
+            <div class="card-back">
+                <span class="text-yellow-500">{'★'.repeat(skill.rating)}{'☆'.repeat(5 - skill.rating)}</span>
+            </div>
+        </div>
+    </div>
+{/each}

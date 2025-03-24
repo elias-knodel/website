@@ -1,3 +1,3 @@
-<h1 class="text-xl font-bold">Welcome to SvelteKit</h1>
-<p>Visit <a href="https://svelte.dev/docs/kit" class="text-blue-500 underline">svelte.dev/docs/kit</a>
-    to read the documentation</p>
+<section class="text-gray-900 px-20 py-10 sm:px-40 sm:py-30 h-full w-full isolate rounded-xl bg-white/20 shadow-lg ring-1 ring-black/5">
+    <h1 class="text-xl font-semibold">Coming Soon</h1>
+</section>
