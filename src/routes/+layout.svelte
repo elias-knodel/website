@@ -38,8 +38,28 @@
 <!--</div>-->
 
 
+<!--<div class="h-screen flex flex-col">-->
+<!--    <div class="grow flex justify-center items-center bg-linear-to-br from-sky-500 to-indigo-500">-->
+<!--        <div class="mx-auto max-w-screen-lg p-5">-->
+<!--            {@render children()}-->
+<!--        </div>-->
+<!--    </div>-->
+
+<!--</div>-->
+
+<!--    <div class="text-black flex justify-end">-->
+<!--        <div class="bg-white px-2">-->
+<!--            <a class="hover:underline" href="/imprint">Impressum</a>-->
+<!--            <span> | </span>-->
+<!--            <a class="hover:underline" href="/data-privacy">Datenschutz</a>-->
+<!--            <span> | </span>-->
+<!--            <a class="hover:underline" href="/"> &copy; {copyright} Elias Knodel</a>-->
+<!--        </div>-->
+<!--    </div>-->
+
+
 <div class="h-screen flex flex-col">
-    <div class="grow flex justify-center items-center">
+    <div class="grow flex justify-center items-center bg-linear-to-br from-sky-500 to-indigo-500">
         <div class="mx-auto max-w-screen-lg p-5">
             {@render children()}
         </div>
@@ -47,12 +67,11 @@
 
     <div class="text-black flex justify-end">
         <div class="bg-white px-2">
-            <a href="/imprint">Impressum</a>
+            <a class="hover:underline" href="/imprint">Impressum</a>
             <span> | </span>
-            <a href="/data-privacy">Datenschutz</a>
+            <a class="hover:underline" href="/data-privacy">Datenschutz</a>
             <span> | </span>
-            <span> &copy; {copyright} Elias Knodel</span>
+            <a class="hover:underline" href="/"> &copy; {copyright} Elias Knodel</a>
         </div>
     </div>
 </div>
-

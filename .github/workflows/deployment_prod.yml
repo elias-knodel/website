@@ -1,0 +1,55 @@
+name: Deployment (Production)
+
+on:
+  push:
+    tags:
+      - "v[0-9]+.[0-9]+.[0-9]+"
+
+jobs:
+  deploy:
+    name: Deployment
+    runs-on: ubuntu-latest
+    environment:
+      name: Production
+      url: https://...
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Setup NodeJS
+        uses: actions/setup-node@v3
+        with:
+          node-version: 23
+
+      - name: Install dependencies
+        run: npm ci
+      - name: Build application
+        run: npm run build
+
+      - name: Deploy to remote using SFTP
+        run: |
+          # Setup ssh host key
+          echo "Writing known_hosts file for deployment..."
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_HOST_KEY_PRODUCTION }}" > ~/.ssh/known_hosts
+          echo "Done!"
+          echo ""
+          echo ""
+          
+          # Install lftp
+          echo "Installing lftp client..."
+          sudo apt-get install -y lftp
+          echo "Done!"
+          echo ""
+          echo ""
+          
+          # Upload files using lftp
+          echo "Deploying 'public/' onto remote system..."
+          lftp -e "open -u ${{ secrets.SFTP_USER_PRODUCTION }},${{ secrets.SFTP_PASSWORD_PRODUCTION }} -p ${{ secrets.SFTP_PORT_PRODUCTION }} sftp://${{ secrets.SFTP_HOST_PRODUCTION }}; \
+          mirror -v --delete -R --exclude .cache/ --exclude .well-known public/ /; \
+          bye"
+          echo "Done!"
+          echo ""
+          echo ""
+          echo "Deployment finished!"
