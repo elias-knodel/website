@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@plugin "@tailwindcss/typography";
+
 @font-face {
     font-family: "Quicksand";
     font-style: normal;
@@ -12,6 +14,17 @@
     --font-display: "Quicksand", "sans-serif";
     --default-font-family: "Quicksand";
     /* ... */
+}
+
+@layer utilities {
+
+    .prose {
+        max-width: none;
+    }
+
+    .prose ul > li::marker {
+        color: #000;
+    }
 }
 
 /*body::before {*/
