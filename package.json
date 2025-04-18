@@ -33,11 +33,13 @@
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"format": "prettier --write .",
-		"lint": "prettier --check . && eslint ."
+		"lint": "prettier --check . && eslint .",
+		"start": "node ./build/index.js"
 	},
 	"type": "module",
 	"dependencies": {
 		"@icons-pack/svelte-simple-icons": "^4.0.2",
+		"@sveltejs/adapter-node": "^5.2.12",
 		"@tailwindcss/vite": "^4.1.4",
 		"lucide-svelte": "^0.473.0"
 	}
