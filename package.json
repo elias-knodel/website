@@ -36,6 +36,9 @@
 		"lint": "prettier --check . && eslint .",
 		"start": "node ./build/index.js"
 	},
+    "engines": {
+        "pnpm": "10.8.1"
+    },
 	"type": "module",
 	"dependencies": {
 		"@icons-pack/svelte-simple-icons": "^4.0.2",
