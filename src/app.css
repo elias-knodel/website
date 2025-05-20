@@ -1,0 +1,26 @@
+@import 'tailwindcss';
+
+@plugin '@tailwindcss/typography';
+
+@font-face {
+    font-family: "Quicksand";
+    font-style: normal;
+    font-weight: 300 700;
+    /*font-display: swap;*/
+    src: url("/fonts/Quicksand-VariableFont_wght.ttf") format("truetype");
+}
+
+@theme {
+    --font-display: "Quicksand", "sans-serif";
+    --default-font-family: "Quicksand";
+}
+
+@layer utilities {
+    .prose {
+        max-width: none;
+    }
+
+    .prose ul > li::marker {
+        color: #000;
+    }
+}

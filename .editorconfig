@@ -1,0 +1,8 @@
+# Insert a new line at the end of each file
+[*]
+insert_final_newline = true
+
+# Use spaces instead of tabs for indentation
+[{*.svelte,*.js,*.ts,*.css,*.scss,*.html,*.json}]
+indent_style = space
+indent_size = 4
