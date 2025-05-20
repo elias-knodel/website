@@ -26,8 +26,10 @@
 <div class="absolute inset-0">
     <enhanced:img
         src={randomImage}
+        aria-hidden="true"
         alt="A picture from Japan."
         class="h-full w-full object-cover"
+        fetchpriority="high"
     />
 </div>
 
@@ -41,8 +43,10 @@
             {#each Array.from(imagesMap.values()) as image}
                 <enhanced:img
                     src={image}
+                    aria-hidden="true"
                     alt="A picture from Japan."
                     class="h-48 w-full object-cover rounded-xl"
+                    fetchpriority="low"
                 />
             {/each}
         </div>

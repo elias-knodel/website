@@ -7,6 +7,11 @@
     import Socials from '$lib/components/homepage/Socials.svelte';
 </script>
 
+<svelte:head>
+    <title>Homepage</title>
+</svelte:head>
+
+
 <main class="m-5 text-white">
     <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
         <Card classes="bg-violet-600/20 w-[500px] h-[250px] col-span-2 ">

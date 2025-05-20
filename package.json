@@ -1,7 +1,7 @@
 {
-    "name": "website-next",
+    "name": "website",
     "private": true,
-    "version": "0.0.1",
+    "version": "0.1.0",
     "type": "module",
     "scripts": {
         "dev": "vite dev",
@@ -11,7 +11,8 @@
         "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
         "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
         "format": "prettier --write .",
-        "lint": "prettier --check . && eslint ."
+        "lint": "prettier --check . && eslint .",
+        "start": "bun ./build/index.js"
     },
     "devDependencies": {
         "@eslint/compat": "^1.2.5",

@@ -1,3 +1,7 @@
+<svelte:head>
+    <title>Data Privacy</title>
+</svelte:head>
+
 <div class="mx-auto max-w-screen-lg p-5">
     <main
         class="prose text-gray-900 px-4 py-2 sm:px-10 sm:py-8 h-full w-full isolate rounded-xl bg-white/40 shadow-lg ring-1 ring-black/5">
