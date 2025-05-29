@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="PrettierConfiguration">
-    <option name="myConfigurationMode" value="DISABLED" />
-    <option name="myRunOnSave" value="true" />
-    <option name="myRunOnReformat" value="true" />
-    <option name="customIgnorePath" value="\\wsl.localhost\Ubuntu-24.04\home\elias\git\elias-knodel\website-next\.prettierignore" />
-  </component>
-</project>

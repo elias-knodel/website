@@ -1,3 +1,8 @@
+# IDE
+.idea
+.vscode
+
+# JavaScript
 node_modules
 
 # Output
