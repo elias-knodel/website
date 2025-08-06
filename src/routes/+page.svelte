@@ -29,8 +29,11 @@
             <Socials />
         </Card>
         <Card classes="hidden lg:block w-[525px] h-[250px] col-span-2 ">
-            <p>06: ???</p>
-            <p>Coming Soon...</p>
+            <p class="font-mono">06: Capacity</p>
+            <br>
+            <p>DE: Derzeit bin ich Vollzeit beschäftigt und nehme keine Aufträge an.</p>
+            <p>EN: Currently employed full time and not accepting jobs.</p>
+            <p></p>
         </Card>
     </div>
 </main>

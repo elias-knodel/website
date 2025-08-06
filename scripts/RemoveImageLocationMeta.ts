@@ -5,7 +5,7 @@ import sharp from "sharp";
 const [, , inputPath, outputPath] = process.argv;
 
 if (!inputPath || !outputPath) {
-    console.error("Usage: bun run read-remove-gps.ts <input-image> <output-image>");
+    console.error("Usage:  bun run scripts/RemoveImageLocationMeta.ts <input-image> <output-image>");
     process.exit(1);
 }
 
