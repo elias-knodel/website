@@ -12,7 +12,7 @@
 </svelte:head>
 
 <div class="flex h-screen flex-col">
-    <div class="flex grow items-center justify-center bg-linear-to-br from-sky-500 to-indigo-500">
+    <div class="flex grow items-center justify-center bg-linear-to-br from-sky-500 to-indigo-500 ek-custom-bg">
         {@render children()}
     </div>
 
@@ -26,3 +26,13 @@
         </div>
     </div>
 </div>
+
+<style>
+    .ek-custom-bg {
+        background-image: url('/public/layered-waves.svg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed; /* This makes it fixed */
+    }
+</style>

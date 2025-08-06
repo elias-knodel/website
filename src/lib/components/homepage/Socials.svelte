@@ -7,7 +7,7 @@
             <li>
                 <span
                     >/<a
-                        class="text-indigo-900 hover:underline"
+                        class="text-orange-light hover:underline"
                         href="https://github.com/elias-knodel/"
                         target="_blank">GitHub</a
                     ></span
@@ -16,7 +16,7 @@
             <li>
                 <span
                     >/<a
-                        class="text-indigo-900 hover:underline"
+                        class="text-orange-heavy hover:underline"
                         href="https://www.linkedin.com/in/elias-knodel-4766bb17a/"
                         target="_blank">LinkedIn</a
                     ></span

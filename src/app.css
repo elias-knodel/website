@@ -13,14 +13,15 @@
 @theme {
     --font-display: "Quicksand", "sans-serif";
     --default-font-family: "Quicksand";
+    --color-orange-heavy: #DD4C28;
+    --color-orange-medium: #F66C1D;
+    --color-orange-light: #FF8623;
+    --color-teal-light: #438D94;
+    --color-teal-heavy: #284858;
 }
 
 @layer utilities {
     .prose {
         max-width: none;
-    }
-
-    .prose ul > li::marker {
-        color: #000;
     }
 }

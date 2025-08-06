@@ -4,7 +4,7 @@
 
 <div class="mx-auto max-w-screen-lg p-5">
     <main
-        class="text-gray-900 px-4 py-2 sm:px-10 sm:py-8 h-full w-full isolate rounded-xl bg-white/40 shadow-lg ring-1 ring-black/5">
+        class="prose prose-p:text-white prose-headings:text-white prose-a:text-orange-light px-4 py-2 sm:px-10 sm:py-8 h-full w-full isolate bg-black/50 backdrop-blur-md rounded-xl border border-white/20">
         <h1 class="mt-10 scroll-m-20 pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0">
             Impressum
         </h1>

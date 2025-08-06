@@ -1,27 +1,26 @@
 <script lang="ts">
 
-    const imageModules = import.meta.glob(
-        '$lib/assets/images/japan/*.{avif,gif,heif,jpeg,jpg,png,tiff,webp,svg}',
-        {
-            eager: true,
-            query: {
-                enhanced: true
-            }
-        }
-    );
+     const imageModules = import.meta.glob(
+         '$lib/assets/images/japan/*.{avif,gif,heif,jpeg,jpg,png,tiff,webp,svg}',
+         {
+             eager: true,
+             query: {
+                 enhanced: true
+             }
+         }
+     );
 
-    const imageCount = Object.keys(imageModules).length;
-    const randomImageIndex = Math.floor(Math.random() * imageCount);
+     const imageCount = Object.keys(imageModules).length;
+     const randomImageIndex = Math.floor(Math.random() * imageCount);
 
-    const imagesMap = new Map();
-    for (let i = 0; i < imageCount; i++) {
-        imagesMap.set(i, Object.entries(imageModules)[i][1].default);
-    }
+     const imagesMap = new Map();
+     for (let i = 0; i < imageCount; i++) {
+         imagesMap.set(i, Object.entries(imageModules)[i][1].default);
+     }
 
-    const randomImage = imagesMap.get(randomImageIndex);
-    imagesMap.delete(randomImageIndex);
+     const randomImage = imagesMap.get(randomImageIndex);
+     imagesMap.delete(randomImageIndex);
 </script>
-
 
 <div class="absolute inset-0">
     <enhanced:img
@@ -39,7 +38,7 @@
         <p class="font-mono">02.Gallery</p>
     </div>
     <div class="p-4">
-        <div class="grid grid-cols-2 gap-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-y-4 sm:gap-4">
             {#each Array.from(imagesMap.values()) as image}
                 <enhanced:img
                     src={image}

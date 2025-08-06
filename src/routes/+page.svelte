@@ -11,25 +11,24 @@
     <title>Homepage</title>
 </svelte:head>
 
-
 <main class="m-5 text-white">
-    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
-        <Card classes="bg-violet-600/20 w-[500px] h-[250px] col-span-2 ">
+    <div class="grid grid-cols-1 gap-y-4 sm:gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+        <Card classes="w-full sm:w-[250px] lg:w-[500px] h-fit sm:h-[250px] col-span-2 ">
             <Intro />
         </Card>
-        <Card classes="p-0 w-[500px] h-[500px] row-span-2 col-span-2 relative overflow-hidden">
+        <Card classes="w-full h-fit p-0 sm:w-[500px] sm:h-[500px] row-span-2 col-span-2 relative overflow-hidden">
             <Gallery />
         </Card>
-        <Card classes="bg-purple-900/30 w-[250px] h-[500px] row-span-2 ">
+        <Card classes="w-full h-fit sm:w-[250px] sm:h-[500px] col-span-2 row-span-1 sm:col-span-1 sm:row-span-2">
             <Projects />
         </Card>
-        <Card classes="w-[500px] h-[500px] row-span-2 col-span-2 ">
+        <Card classes="hidden xl:block w-[500px] h-[500px] row-span-2 col-span-2">
             <Skills />
         </Card>
-        <Card classes="bg-violet-400/30 w-[250px] h-[250px] col-span-1 ">
+        <Card classes="w-full h-fit sm:w-[250px] sm:h-[250px] col-span-1">
             <Socials />
         </Card>
-        <Card classes="bg-pink-400/30 w-[525px] h-[250px] col-span-2 ">
+        <Card classes="hidden lg:block w-[525px] h-[250px] col-span-2 ">
             <p>06: ???</p>
             <p>Coming Soon...</p>
         </Card>
