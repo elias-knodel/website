@@ -3,7 +3,7 @@
 
     let moving = false;
     let element;
-    let { children, left = 100, top = 100, classes } = $props();
+    let { children, left = $bindable(100), top = $bindable(100), classes } = $props();
 
     const defaultClasses =
         'bg-white rounded-xl p-3 shadow-xl';
