@@ -3,6 +3,11 @@ FROM oven/bun AS builder
 
 WORKDIR /app
 
+# Receive the CDN origin at build time
+# Usage: docker build --build-arg PUBLIC_CDN_URL=https://cdn.yourdomain.com
+ARG PUBLIC_CDN_URL
+ENV PUBLIC_CDN_URL=$PUBLIC_CDN_URL
+
 # Copy everything
 COPY . .
 

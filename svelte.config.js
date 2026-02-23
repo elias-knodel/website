@@ -8,10 +8,12 @@ const config = {
     preprocess: vitePreprocess(),
 
     kit: {
-        // adapter-auto only supports some environments, see https://svelte.dev/docs/kit/adapter-auto for a list.
-        // If your environment is not supported, or you settled on a specific environment, switch out the adapter.
-        // See https://svelte.dev/docs/kit/adapters for more information about adapters.
-        adapter: adapter()
+        adapter: adapter(),
+        paths: {
+            // Bake the CDN origin into all /_app/ asset URLs at build time.
+            // Pass via: docker build --build-arg PUBLIC_CDN_URL=https://cdn.yourdomain.com
+            assets: process.env.PUBLIC_CDN_URL ?? ''
+        }
     }
 };
 
