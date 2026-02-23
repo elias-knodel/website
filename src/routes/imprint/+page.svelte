@@ -60,24 +60,8 @@
 
         <p class="leading-7 [&:not(:first-child)]:mt-6">
             Elias Knodel<br />
-            IT-Dienstleistungen<br />
             Eschenweg 6<br />
             76707 Hambr&uuml;cken
-        </p>
-
-        <h2 class="mt-8 scroll-m-20 text-2xl font-semibold tracking-tight">Umsatzsteuer-ID</h2>
-        <p class="leading-7 [&:not(:first-child)]:mt-6">
-            Umsatzsteuer-Identifikationsnummer gem&auml;&szlig; &sect; 27 a
-            Umsatzsteuergesetz:<br />
-            DE360094178
-        </p>
-
-        <h2 class="mt-8 scroll-m-20 text-2xl font-semibold tracking-tight">
-            Verbraucher&shy;streit&shy;beilegung/Universal&shy;schlichtungs&shy;stelle
-        </h2>
-        <p class="leading-7 [&:not(:first-child)]:mt-6">
-            Wir sind nicht bereit oder verpflichtet, an
-            Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
         </p>
 
         <p class="leading-7 [&:not(:first-child)]:mt-6">

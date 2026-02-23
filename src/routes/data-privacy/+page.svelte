@@ -114,7 +114,6 @@ noreferrer">https://www.hetzner.com/de/legal/privacy-policy/</a>.
         </p>
         <p>
             Elias Knodel<br />
-            IT-Dienstleistungen<br />
             Eschenweg 6<br />
             76707 Hambr&uuml;cken
         </p>

@@ -8,7 +8,7 @@
 
 <svelte:head>
     <title>Website | Elias</title>
-    <meta name="description" content="Freelance Fullstack Web Developer. Currently employed full time and not accepting jobs.">
+    <meta name="description" content="Fullstack Web Developer. Currently employed full time and not accepting jobs.">
 </svelte:head>
 
 <div class="flex h-screen flex-col">
