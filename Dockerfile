@@ -11,12 +11,14 @@ RUN bun install
 RUN bun --bun run build
 
 # ---- Run Stage ----
-FROM oven/bun
+FROM oven/bun AS production
 
 WORKDIR /app
 
 # Copy built files and dependencies only
 COPY --from=builder /app /app
+
+USER bun
 
 # If using `bun run preview` (Node adapter)
 CMD ["bun", "run", "start"]
