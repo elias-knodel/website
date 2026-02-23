@@ -1,54 +1,40 @@
 <script lang="ts">
     import type { Action } from 'svelte/action';
     import { mapState } from '$lib/components/map/Map.svelte';
-
-    function randomColorFromPalette(): string {
-        // Hue ranges for blue, cyan, purple, lavender
-        const hueRanges = [
-            [180, 200],  // Cyan
-            [210, 240],  // Blue
-            [250, 280],  // Purple
-            [280, 300]  // Lavender
-        ];
-
-        // Pick a random range
-        const [hueMin, hueMax] = hueRanges[Math.floor(Math.random() * hueRanges.length)];
-        const hue = Math.floor(Math.random() * (hueMax - hueMin + 1)) + hueMin;
-
-        // Keep saturation and lightness reasonable
-        const saturation = Math.floor(Math.random() * 30) + 60; // 60–90%
-        const lightness = Math.floor(Math.random() * 20) + 60;  // 60–80%
-
-        return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
-    }
+    import { colorForPrefecture } from '$lib/data/japanPrefectures';
 
     const collectPaths: Action = (node) => {
-        const paths = node.querySelectorAll('path');
-        const ids = new Map<string, SVGPathElement>();
-
-        paths.forEach(path => {
+        node.querySelectorAll('path').forEach(path => {
             const id = path.getAttribute('id');
-            if (id) {
-                ids.set(id, path);
-            }
-        });
-
-        ids.forEach(value => {
-            value.setAttribute('fill', randomColorFromPalette());
+            if (id) path.setAttribute('fill', colorForPrefecture(id));
         });
     };
 
-    function handleClick(event) {
-        const id = event.target.id;
-
-        if (!id) {
-            return;
-        }
-
-        mapState.data.id = id;
-        mapState.data.title = event.target.attributes.title.value;
+    function handleClick(event: MouseEvent) {
+        const target = event.target as SVGPathElement;
+        const id = target.id;
+        if (!id) return;
+        mapState.select(id, target.getAttribute('title') ?? id);
     }
 </script>
+
+<style>
+    path {
+        cursor: pointer;
+        transition: transform 0.15s ease, filter 0.15s ease;
+        transform-box: fill-box;
+        transform-origin: center;
+        /*stroke: transparent;*/
+        /*stroke-width: 8px;*/
+        pointer-events: all;
+    }
+
+    path:hover {
+        /*transform: scale(1.15);*/
+        filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.85)) brightness(1.25);
+        z-index: 1;
+    }
+</style>
 
 <div
     class="h-full w-full bg-black/70 p-5 rounded-xl">

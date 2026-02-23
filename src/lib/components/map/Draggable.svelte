@@ -34,7 +34,7 @@
 <style>
     .draggable {
         user-select: none;
-        position: absolute;
+        position: fixed;
     }
 </style>
 

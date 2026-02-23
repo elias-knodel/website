@@ -5,13 +5,15 @@
 <div class="w-full mt-5">
     <InteractiveJapanMap />
 
-    <br>
-    <h3 class="font-bold"> Legal Notice:</h3>
-    <p>
-        Map data: © MapSVG, licensed under CC BY 4.0
-    </p>
-    <p>
-        No modifications were made to the SVG itself. All interaction is done in css and javascript.
-    </p>
-    <br>
+    <div class="max-w-7xl mx-auto mt-15">
+        <br>
+        <h3 class="font-bold"> Legal Notice:</h3>
+        <p>
+            Map data: © MapSVG, licensed under CC BY 4.0
+        </p>
+        <p>
+            No modifications were made to the SVG itself. All interaction is done in css and javascript.
+        </p>
+        <br>
+    </div>
 </div>
