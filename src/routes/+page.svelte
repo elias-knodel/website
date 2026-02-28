@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { onMount, tick } from 'svelte';
     import Card from '$lib/components/Card.svelte';
     import Intro from '$lib/components/homepage/Intro.svelte';
     import Gallery from '$lib/components/homepage/Gallery.svelte';
@@ -8,6 +9,67 @@
     import JapaneseSaying from '$lib/components/homepage/JapaneseSaying.svelte';
 
     let { data } = $props();
+
+    type Bp = '' | 'sm' | 'md' | 'lg' | 'xl';
+    let bp = $state<Bp>('');
+    let gridEl = $state<HTMLDivElement>();
+
+    function detectBp(): Bp {
+        const w = window.innerWidth;
+        if (w >= 1280) return 'xl';
+        if (w >= 1024) return 'lg';
+        if (w >= 768) return 'md';
+        if (w >= 640) return 'sm';
+        return '';
+    }
+
+    onMount(() => {
+        bp = detectBp();
+
+        const queries = [640, 768, 1024, 1280].map(w =>
+            window.matchMedia(`(min-width: ${w}px)`)
+        );
+
+        const onChange = async () => {
+            const next = detectBp();
+            if (next === bp || !gridEl) return;
+
+            const items = Array.from(gridEl.querySelectorAll<HTMLElement>(
+                '.area-intro, .area-gallery, .area-projects, .area-skills, .area-socials, .area-saying'
+            ));
+
+            // Fade out all items
+            try {
+                await Promise.all(items.map(el =>
+                    el.animate(
+                        [{ opacity: 1 }, { opacity: 0 }],
+                        { duration: 150, easing: 'ease-in', fill: 'forwards' }
+                    ).finished
+                ));
+            } catch {
+                return;
+            }
+
+            // Swap the layout
+            bp = next;
+            await tick();
+
+            // Cancel fade-out fills, then stagger items back in
+            items.forEach((el, i) => {
+                el.getAnimations().forEach(a => a.cancel());
+                el.animate(
+                    [
+                        { opacity: 0, transform: 'translateY(8px) scale(0.97)' },
+                        { opacity: 1, transform: 'none' }
+                    ],
+                    { duration: 300, delay: i * 40, easing: 'ease-out', fill: 'backwards' }
+                );
+            });
+        };
+
+        queries.forEach(mq => mq.addEventListener('change', onChange));
+        return () => queries.forEach(mq => mq.removeEventListener('change', onChange));
+    });
 </script>
 
 <svelte:head>
@@ -15,9 +77,9 @@
 </svelte:head>
 
 <main class="m-5 text-white">
-    <div class="homepage-grid max-w-[1314px]">
+    <div class="homepage-grid max-w-[1314px] {bp}" bind:this={gridEl}>
         <div class="area-intro">
-            <Card classes="w-full">
+            <Card classes="w-full content-center">
                 <Intro />
             </Card>
         </div>
@@ -55,7 +117,6 @@
 </main>
 
 <style>
-    /* Named areas assigned to each item */
     .area-intro    { grid-area: intro; }
     .area-gallery  { grid-area: gallery; }
     .area-projects { grid-area: projects; }
@@ -63,7 +124,6 @@
     .area-socials  { grid-area: socials; }
     .area-saying   { grid-area: saying; }
 
-    /* mobile: single column, items stack in order */
     .homepage-grid {
         display: grid;
         gap: 1rem;
@@ -77,57 +137,45 @@
             "saying";
     }
 
-    /* sm (640px): 2 cols — Gallery and Skills each span full width (2 cols) */
-    @media (min-width: 640px) {
-        .homepage-grid {
-            grid-template-columns: repeat(2, 1fr);
-            grid-auto-rows: 250px;
-            grid-template-areas:
-                "intro    intro"
-                "gallery  gallery"
-                "gallery  gallery"
-                "projects socials"
-                "projects saying"
-                "skills   skills"
-                "skills   skills";
-        }
+    .homepage-grid.sm {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 250px;
+        grid-template-areas:
+            "intro    intro"
+            "gallery  gallery"
+            "gallery  gallery"
+            "projects socials"
+            "projects saying"
+            "skills   skills"
+            "skills   skills";
     }
 
-    /* md (768px): 3 cols — Gallery and Skills each 2 cols, Saying fills the 3rd col */
-    @media (min-width: 768px) {
-        .homepage-grid {
-            grid-template-columns: repeat(3, 1fr);
-            grid-auto-rows: 250px;
-            grid-template-areas:
-                "intro   intro   projects"
-                "gallery gallery projects"
-                "gallery gallery socials"
-                "skills  skills  saying"
-                "skills  skills  saying";
-        }
+    .homepage-grid.md {
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: 250px;
+        grid-template-areas:
+            "intro   intro   projects"
+            "gallery gallery projects"
+            "gallery gallery socials"
+            "skills  skills  saying"
+            "skills  skills  saying";
     }
 
-    /* lg (1024px): 4 cols — compact 3-row layout, no gaps */
-    @media (min-width: 1024px) {
-        .homepage-grid {
-            grid-template-columns: repeat(4, 1fr);
-            grid-auto-rows: 250px;
-            grid-template-areas:
-                "intro    intro   gallery  gallery"
-                "projects socials gallery  gallery"
-                "projects skills  skills   saying";
-        }
+    .homepage-grid.lg {
+        grid-template-columns: repeat(4, 1fr);
+        grid-auto-rows: 250px;
+        grid-template-areas:
+            "intro    intro   gallery  gallery"
+            "projects socials gallery  gallery"
+            "projects skills  skills   saying";
     }
 
-    /* xl (1280px): 5 cols — full layout, 3 rows, no gaps */
-    @media (min-width: 1280px) {
-        .homepage-grid {
-            grid-template-columns: repeat(5, 1fr);
-            grid-auto-rows: 250px;
-            grid-template-areas:
-                "intro   intro   gallery  gallery  projects"
-                "skills  skills  gallery  gallery  projects"
-                "skills  skills  socials  saying   saying";
-        }
+    .homepage-grid.xl {
+        grid-template-columns: repeat(5, 1fr);
+        grid-auto-rows: 250px;
+        grid-template-areas:
+            "intro   intro   gallery  gallery  projects"
+            "skills  skills  gallery  gallery  projects"
+            "skills  skills  socials  saying   saying";
     }
 </style>
