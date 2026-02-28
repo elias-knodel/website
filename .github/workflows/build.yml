@@ -49,4 +49,4 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           build-args: |
-            PUBLIC_CDN_URL=https://cdn.elias-knodel.de
+            PUBLIC_CDN_URL=https://elias-knodel.de

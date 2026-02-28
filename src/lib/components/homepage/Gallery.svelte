@@ -52,7 +52,7 @@
         <p class="font-mono">02.Gallery</p>
     </div>
     <div class="p-4">
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-y-4 sm:gap-4">
+        <div class="grid sm:grid-cols-2 gap-y-4 sm:gap-4 [grid-auto-rows:auto]">
             {#each restImages as image}
                 <enhanced:img
                     src={image.src}
