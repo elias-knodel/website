@@ -14,7 +14,9 @@ class MapStore {
                     if (typeof left === 'number') this.dialogLeft = left;
                     if (typeof top === 'number') this.dialogTop = top;
                 }
-            } catch { /* ignore corrupted storage */ }
+            } catch {
+                /* ignore corrupted storage */
+            }
         }
     }
 
@@ -27,10 +29,13 @@ class MapStore {
     }
 
     savePosition() {
-        localStorage.setItem(STORAGE_KEY, JSON.stringify({
-            left: this.dialogLeft,
-            top: this.dialogTop
-        }));
+        localStorage.setItem(
+            STORAGE_KEY,
+            JSON.stringify({
+                left: this.dialogLeft,
+                top: this.dialogTop
+            })
+        );
     }
 }
 

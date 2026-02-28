@@ -1,39 +1,37 @@
 <script lang="ts">
-     const imageModules = import.meta.glob(
-         '$lib/assets/images/japan/*.{avif,gif,heif,jpeg,jpg,png,tiff,webp,svg}',
-         {
-             eager: true,
-             query: {
-                 enhanced: true
-             }
-         }
-     );
+    const imageModules = import.meta.glob(
+        '$lib/assets/images/japan/*.{avif,gif,heif,jpeg,jpg,png,tiff,webp,svg}',
+        {
+            eager: true,
+            query: {
+                enhanced: true
+            }
+        }
+    );
 
-     // Helper to extract filename and turn into alt text
-     function getAltFromPath(path: string): string {
-         // Get filename without extension
-         const match = path.match(/\/([^\/]+)\.[\w]+$/);
-         if (!match) return 'A picture from Japan.';
-         // Replace dashes/underscores and capitalize words
-         const label = match[1]
-             .replace(/[-_]/g, ' ')
-             .replace(/\b(\w)/g, s => s.toUpperCase());
-         return `Photo of ${label}, Japan`;
-     }
+    // Helper to extract filename and turn into alt text
+    function getAltFromPath(path: string): string {
+        // Get filename without extension
+        const match = path.match(/\/([^]+)\.\w+$/);
+        if (!match) return 'A picture from Japan.';
+        // Replace dashes/underscores and capitalize words
+        const label = match[1].replace(/[-_]/g, ' ').replace(/\b(\w)/g, (s) => s.toUpperCase());
+        return `Photo of ${label}, Japan`;
+    }
 
-     // Prepare entries with alt info
-     const images = Object.entries(imageModules).map(([path, mod]) => ({
-         src: mod.default,
-         alt: getAltFromPath(path)
-     }));
+    // Prepare entries with alt info
+    const images = Object.entries(imageModules).map(([path, mod]) => ({
+        src: mod.default,
+        alt: getAltFromPath(path)
+    }));
 
-     const imageCount = images.length;
-     const randomImageIndex = Math.floor(Math.random() * imageCount);
-     const [randomImage, ...restImages] = [
-         images[randomImageIndex],
-         ...images.slice(0, randomImageIndex),
-         ...images.slice(randomImageIndex + 1)
-     ];
+    const imageCount = images.length;
+    const randomImageIndex = Math.floor(Math.random() * imageCount);
+    const [randomImage, ...restImages] = [
+        images[randomImageIndex],
+        ...images.slice(0, randomImageIndex),
+        ...images.slice(randomImageIndex + 1)
+    ];
 </script>
 
 <div class="absolute inset-0">
@@ -52,13 +50,13 @@
         <p class="font-mono">02.Gallery</p>
     </div>
     <div class="p-4">
-        <div class="grid grid-cols-2 gap-y-4 gap-4">
-            {#each restImages as image}
+        <div class="grid grid-cols-2 gap-4 gap-y-4">
+            {#each restImages as image (image.src)}
                 <enhanced:img
                     src={image.src}
                     aria-hidden="true"
-                    alt="{image.alt}"
-                    class="h-48 w-full object-cover rounded-xl"
+                    alt={image.alt}
+                    class="h-48 w-full rounded-xl object-cover"
                     fetchpriority="low"
                 />
             {/each}

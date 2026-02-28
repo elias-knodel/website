@@ -12,10 +12,10 @@ export interface Prefecture {
     region: string;
 }
 
-export type RegionDatabase    = Record<string, RegionColor>;
+export type RegionDatabase = Record<string, RegionColor>;
 export type PrefectureDatabase = Record<string, Prefecture>;
 
-const regions    = data.regions    as RegionDatabase;
+const regions = data.regions as RegionDatabase;
 const prefectures = data.prefectures as PrefectureDatabase;
 
 export function getPrefecture(id: string): Prefecture | undefined {
@@ -33,9 +33,9 @@ export function colorForPrefecture(id: string): string {
     const hueMin = range?.hueMin ?? 0;
     const hueMax = range?.hueMax ?? 360;
 
-    const hue        = Math.floor(Math.random() * (hueMax - hueMin + 1)) + hueMin;
+    const hue = Math.floor(Math.random() * (hueMax - hueMin + 1)) + hueMin;
     const saturation = Math.floor(Math.random() * 20) + 65; // 65–85%
-    const lightness  = Math.floor(Math.random() * 15) + 62; // 62–77%
+    const lightness = Math.floor(Math.random() * 15) + 62; // 62–77%
 
     return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
 }

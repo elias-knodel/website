@@ -3,50 +3,50 @@
 name: Build
 
 on:
-  push:
-    branches:
-      - main
+    push:
+        branches:
+            - main
 
 jobs:
-  build-and-push:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-      - name: Install Docker with buildx
-        uses: docker/setup-buildx-action@v3
-        with:
-          buildkitd-flags: --debug
+    build-and-push:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v4
+              with:
+                  fetch-depth: 0
+            - name: Install Docker with buildx
+              uses: docker/setup-buildx-action@v3
+              with:
+                  buildkitd-flags: --debug
 
-      - name: Login to GitHub packages
-        uses: docker/login-action@v3
-        with:
-          registry: ghcr.io
-          username: ${{ github.repository_owner }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+            - name: Login to GitHub packages
+              uses: docker/login-action@v3
+              with:
+                  registry: ghcr.io
+                  username: ${{ github.repository_owner }}
+                  password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Extract metadata (tags, labels) for Docker
-        id: meta
-        uses: docker/metadata-action@v5
-        with:
-          images: |
-            ghcr.io/elias-knodel/website
-          tags: |
-            type=raw,value=latest,enable={{is_default_branch}}
+            - name: Extract metadata (tags, labels) for Docker
+              id: meta
+              uses: docker/metadata-action@v5
+              with:
+                  images: |
+                      ghcr.io/elias-knodel/website
+                  tags: |
+                      type=raw,value=latest,enable={{is_default_branch}}
 
-      # Deploy stage image to Container Registry
-      - name: Build and publish images
-        uses: docker/build-push-action@v6
-        id: build_push
-        with:
-          context: .
-          file: ./Dockerfile
-          platforms: linux/amd64
-          target: production
-          push: true
-          tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
-          build-args: |
-            PUBLIC_CDN_URL=https://elias-knodel.de
+            # Deploy stage image to Container Registry
+            - name: Build and publish images
+              uses: docker/build-push-action@v6
+              id: build_push
+              with:
+                  context: .
+                  file: ./Dockerfile
+                  platforms: linux/amd64
+                  target: production
+                  push: true
+                  tags: ${{ steps.meta.outputs.tags }}
+                  labels: ${{ steps.meta.outputs.labels }}
+                  build-args: |
+                      PUBLIC_CDN_URL=https://elias-knodel.de

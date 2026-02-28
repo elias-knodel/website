@@ -26,26 +26,30 @@
     onMount(() => {
         bp = detectBp();
 
-        const queries = [640, 768, 1024, 1280].map(w =>
-            window.matchMedia(`(min-width: ${w}px)`)
-        );
+        const queries = [640, 768, 1024, 1280].map((w) => window.matchMedia(`(min-width: ${w}px)`));
 
         const onChange = async () => {
             const next = detectBp();
             if (next === bp || !gridEl) return;
 
-            const items = Array.from(gridEl.querySelectorAll<HTMLElement>(
-                '.area-intro, .area-gallery, .area-projects, .area-skills, .area-socials, .area-saying'
-            ));
+            const items = Array.from(
+                gridEl.querySelectorAll<HTMLElement>(
+                    '.area-intro, .area-gallery, .area-projects, .area-skills, .area-socials, .area-saying'
+                )
+            );
 
             // Fade out all items
             try {
-                await Promise.all(items.map(el =>
-                    el.animate(
-                        [{ opacity: 1 }, { opacity: 0 }],
-                        { duration: 150, easing: 'ease-in', fill: 'forwards' }
-                    ).finished
-                ));
+                await Promise.all(
+                    items.map(
+                        (el) =>
+                            el.animate([{ opacity: 1 }, { opacity: 0 }], {
+                                duration: 150,
+                                easing: 'ease-in',
+                                fill: 'forwards'
+                            }).finished
+                    )
+                );
             } catch {
                 return;
             }
@@ -56,7 +60,7 @@
 
             // Cancel fade-out fills, then stagger items back in
             items.forEach((el, i) => {
-                el.getAnimations().forEach(a => a.cancel());
+                el.getAnimations().forEach((a) => a.cancel());
                 el.animate(
                     [
                         { opacity: 0, transform: 'translateY(8px) scale(0.97)' },
@@ -67,8 +71,8 @@
             });
         };
 
-        queries.forEach(mq => mq.addEventListener('change', onChange));
-        return () => queries.forEach(mq => mq.removeEventListener('change', onChange));
+        queries.forEach((mq) => mq.addEventListener('change', onChange));
+        return () => queries.forEach((mq) => mq.removeEventListener('change', onChange));
     });
 </script>
 
@@ -117,65 +121,77 @@
 </main>
 
 <style>
-    .area-intro    { grid-area: intro; }
-    .area-gallery  { grid-area: gallery; }
-    .area-projects { grid-area: projects; }
-    .area-skills   { grid-area: skills; }
-    .area-socials  { grid-area: socials; }
-    .area-saying   { grid-area: saying; }
+    .area-intro {
+        grid-area: intro;
+    }
+    .area-gallery {
+        grid-area: gallery;
+    }
+    .area-projects {
+        grid-area: projects;
+    }
+    .area-skills {
+        grid-area: skills;
+    }
+    .area-socials {
+        grid-area: socials;
+    }
+    .area-saying {
+        grid-area: saying;
+    }
 
     .homepage-grid {
         display: grid;
         gap: 1rem;
         grid-auto-rows: auto;
         grid-template-areas:
-            "intro"
-            "gallery"
-            "projects"
-            "skills"
-            "socials"
-            "saying";
+            'intro'
+            'gallery'
+            'projects'
+            'skills'
+            'socials'
+            'saying';
     }
 
     .homepage-grid.sm {
         grid-template-columns: repeat(2, 1fr);
         grid-auto-rows: 250px;
         grid-template-areas:
-            "intro    intro"
-            "gallery  gallery"
-            "gallery  gallery"
-            "projects socials"
-            "projects saying"
-            "skills   skills"
-            "skills   skills";
+            'intro    intro'
+            'gallery  gallery'
+            'gallery  gallery'
+            'projects socials'
+            'projects saying'
+            'skills   skills'
+            'skills   skills';
     }
 
     .homepage-grid.md {
         grid-template-columns: repeat(3, 1fr);
         grid-auto-rows: 250px;
         grid-template-areas:
-            "intro   intro   projects"
-            "gallery gallery projects"
-            "gallery gallery socials"
-            "skills  skills  saying"
-            "skills  skills  saying";
+            'intro   intro   projects'
+            'gallery gallery projects'
+            'gallery gallery socials'
+            'skills  skills  saying'
+            'skills  skills  saying';
     }
 
     .homepage-grid.lg {
         grid-template-columns: repeat(4, 1fr);
         grid-auto-rows: 250px;
         grid-template-areas:
-            "intro    intro   gallery  gallery"
-            "projects socials gallery  gallery"
-            "projects skills  skills   saying";
+            'intro    intro   gallery  gallery'
+            'projects socials gallery  gallery'
+            'projects skills  skills   saying';
     }
 
     .homepage-grid.xl {
         grid-template-columns: repeat(5, 1fr);
         grid-auto-rows: 250px;
         grid-template-areas:
-            "intro   intro   gallery  gallery  projects"
-            "skills  skills  gallery  gallery  projects"
-            "skills  skills  socials  saying   saying";
+            'intro   intro   gallery  gallery  projects'
+            'skills  skills  gallery  gallery  projects'
+            'skills  skills  socials  saying   saying';
     }
 </style>

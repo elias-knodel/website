@@ -3,20 +3,20 @@
 @plugin '@tailwindcss/typography';
 
 @font-face {
-    font-family: "Quicksand";
+    font-family: 'Quicksand';
     font-style: normal;
     font-weight: 300 700;
     font-display: swap;
-    src: url("/fonts/Quicksand-VariableFont_wght.ttf") format("truetype");
+    src: url('/fonts/Quicksand-VariableFont_wght.ttf') format('truetype');
 }
 
 @theme {
-    --font-display: "Quicksand", "sans-serif";
-    --default-font-family: "Quicksand";
-    --color-orange-heavy: #DD4C28;
-    --color-orange-medium: #F66C1D;
-    --color-orange-light: #FF8623;
-    --color-teal-light: #438D94;
+    --font-display: 'Quicksand', 'sans-serif';
+    --default-font-family: 'Quicksand';
+    --color-orange-heavy: #dd4c28;
+    --color-orange-medium: #f66c1d;
+    --color-orange-light: #ff8623;
+    --color-teal-light: #438d94;
     --color-teal-heavy: #284858;
 }
 

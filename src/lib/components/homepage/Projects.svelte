@@ -2,7 +2,8 @@
     const projects = [
         {
             name: 'Multi-Step-Forms',
-            description: 'Symfony basierte Google Forms alternative auf maximalen Datenschutzniveau.'
+            description:
+                'Symfony basierte Google Forms alternative auf maximalen Datenschutzniveau.'
         },
         {
             name: 'WP AI Post recommendations',
@@ -19,7 +20,7 @@
     <p class="font-mono">03.Projects</p>
 
     <section>
-        {#each projects as project}
+        {#each projects as project (project.name)}
             <div class="mt-5">
                 <h3 class="pb-2 font-bold underline">
                     {project.name}

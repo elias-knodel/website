@@ -8,11 +8,16 @@
 
 <svelte:head>
     <title>Website | Elias</title>
-    <meta name="description" content="Fullstack Web Developer. Currently employed full time and not accepting jobs.">
+    <meta
+        name="description"
+        content="Fullstack Web Developer. Currently employed full time and not accepting jobs."
+    />
 </svelte:head>
 
 <div class="flex h-screen flex-col">
-    <div class="flex grow items-center justify-center bg-linear-to-br from-sky-500 to-indigo-500 ek-custom-bg">
+    <div
+        class="ek-custom-bg flex grow items-center justify-center bg-linear-to-br from-sky-500 to-indigo-500"
+    >
         {@render children()}
     </div>
 

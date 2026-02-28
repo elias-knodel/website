@@ -1,11 +1,13 @@
-import * as ExifReader from "exifreader";
-import sharp from "sharp";
+import * as ExifReader from 'exifreader';
+import sharp from 'sharp';
 
 // Parse arguments
 const [, , inputPath, outputPath] = process.argv;
 
 if (!inputPath || !outputPath) {
-    console.error("Usage:  bun run scripts/RemoveImageLocationMeta.ts <input-image> <output-image>");
+    console.error(
+        'Usage:  bun run scripts/RemoveImageLocationMeta.ts <input-image> <output-image>'
+    );
     process.exit(1);
 }
 
@@ -23,7 +25,7 @@ function logGPS(buffer: Buffer, label: string) {
         console.log('Latitude:', lat);
         console.log('Longitude:', lon);
         Object.keys(tags).forEach((tag) => {
-            if (tag.startsWith("GPS")) {
+            if (tag.startsWith('GPS')) {
                 console.log(`${tag}:`, tags[tag].description);
             }
         });
@@ -32,7 +34,7 @@ function logGPS(buffer: Buffer, label: string) {
     }
 }
 
-logGPS(imgBuffer, "Original");
+logGPS(imgBuffer, 'Original');
 
 // 2. Remove all metadata & convert to PNG
 const sharped = sharp(imgBuffer);
@@ -40,4 +42,4 @@ await sharped.jpeg().toFile(outputPath);
 
 // 3. Read output and log GPS EXIF again
 const outputBuffer = await Bun.file(outputPath).arrayBuffer();
-logGPS(Buffer.from(outputBuffer), "After Removing Metadata & Converting to PNG");
+logGPS(Buffer.from(outputBuffer), 'After Removing Metadata & Converting to PNG');

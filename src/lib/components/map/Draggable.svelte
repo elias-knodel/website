@@ -5,8 +5,7 @@
     let element;
     let { children, left = $bindable(100), top = $bindable(100), classes } = $props();
 
-    const defaultClasses =
-        'bg-white rounded-xl p-3 shadow-xl';
+    const defaultClasses = 'bg-white rounded-xl p-3 shadow-xl';
     const mergedClasses = twMerge(defaultClasses, classes);
 
     function onMouseDown() {
@@ -31,13 +30,6 @@
     }
 </script>
 
-<style>
-    .draggable {
-        user-select: none;
-        position: fixed;
-    }
-</style>
-
 <section
     bind:this={element}
     on:mousedown={onMouseDown}
@@ -48,3 +40,10 @@
 </section>
 
 <svelte:window on:mouseup={onMouseUp} on:mousemove={onMouseMove} />
+
+<style>
+    .draggable {
+        user-select: none;
+        position: fixed;
+    }
+</style>
