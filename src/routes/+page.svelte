@@ -12,6 +12,7 @@
 
     type Bp = '' | 'sm' | 'md' | 'lg' | 'xl';
     let bp = $state<Bp>('');
+    let ready = $state(false);
     let gridEl = $state<HTMLDivElement>();
 
     function detectBp(): Bp {
@@ -25,6 +26,7 @@
 
     onMount(() => {
         bp = detectBp();
+        ready = true;
 
         const queries = [640, 768, 1024, 1280].map((w) => window.matchMedia(`(min-width: ${w}px)`));
 
@@ -81,7 +83,7 @@
 </svelte:head>
 
 <main class="m-5 text-white">
-    <div class="homepage-grid max-w-[1314px] {bp}" bind:this={gridEl}>
+    <div class="homepage-grid max-w-[1314px] {bp}" class:ready bind:this={gridEl}>
         <div class="area-intro">
             <Card classes="w-full content-center">
                 <Intro />
@@ -151,6 +153,12 @@
             'skills'
             'socials'
             'saying';
+        opacity: 0;
+        transition: opacity 0.2s ease;
+    }
+
+    .homepage-grid.ready {
+        opacity: 1;
     }
 
     .homepage-grid.sm {
