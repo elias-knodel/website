@@ -21,14 +21,15 @@
         {@render children()}
     </div>
 
-    <div class="flex justify-end text-black">
-        <div class="bg-white px-2">
-            <a class="hover:underline" href="/imprint">Impressum</a>
-            <span> | </span>
-            <a class="hover:underline" href="/data-privacy">Datenschutz</a>
-            <span> | </span>
-            <a class="hover:underline" href="/"> &copy; {copyright} Elias Knodel</a>
-        </div>
+</div>
+
+<div class="flex justify-end text-black">
+    <div class="bg-white px-2">
+        <a class="hover:underline" href="/imprint">Impressum</a>
+        <span> | </span>
+        <a class="hover:underline" href="/data-privacy">Datenschutz</a>
+        <span> | </span>
+        <a class="hover:underline" href="/"> &copy; {copyright} Elias Knodel</a>
     </div>
 </div>
 
