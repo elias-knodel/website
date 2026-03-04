@@ -202,4 +202,58 @@
             'skills  skills  gallery  gallery  projects'
             'skills  skills  socials  saying   saying';
     }
+
+    /* Media queries mirror the class-based layouts so the correct grid is
+       applied before JS runs, preventing a huge scrollable area on load.
+       The class-based rules above have higher specificity and still win
+       during breakpoint transitions, keeping the animation intact. */
+    @media (min-width: 640px) {
+        .homepage-grid {
+            grid-template-columns: repeat(2, 1fr);
+            grid-auto-rows: 250px;
+            grid-template-areas:
+                'intro    intro'
+                'gallery  gallery'
+                'gallery  gallery'
+                'projects socials'
+                'projects saying'
+                'skills   skills'
+                'skills   skills';
+        }
+    }
+
+    @media (min-width: 768px) {
+        .homepage-grid {
+            grid-template-columns: repeat(3, 1fr);
+            grid-auto-rows: 250px;
+            grid-template-areas:
+                'intro   intro   projects'
+                'gallery gallery projects'
+                'gallery gallery socials'
+                'skills  skills  saying'
+                'skills  skills  saying';
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .homepage-grid {
+            grid-template-columns: repeat(4, 1fr);
+            grid-auto-rows: 250px;
+            grid-template-areas:
+                'intro    intro   gallery  gallery'
+                'projects socials gallery  gallery'
+                'projects skills  skills   saying';
+        }
+    }
+
+    @media (min-width: 1280px) {
+        .homepage-grid {
+            grid-template-columns: repeat(5, 1fr);
+            grid-auto-rows: 250px;
+            grid-template-areas:
+                'intro   intro   gallery  gallery  projects'
+                'skills  skills  gallery  gallery  projects'
+                'skills  skills  socials  saying   saying';
+        }
+    }
 </style>
